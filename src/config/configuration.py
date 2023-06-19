@@ -3,9 +3,11 @@ from src.entity.config_entity import (DataIngestionConfig,
                                       PrepareBaseModelConfig,
                                       PrepareCallbacksConfig,
                                       ModelTrainingConfig,
+                                      ModelEvaluationConfig
                                       )
 from src.utils.commons import read_yaml,create_directories
 import os
+from pathlib import Path
 
 class ConfigurationManager:
     def __init__(self, config_filepath = CONFIG_FILE_PATH,
@@ -85,5 +87,13 @@ class ConfigurationManager:
 
         return model_training_config
 
-    
+    def get_evaluation_config(self) -> ModelEvaluationConfig:
+        evaluation_config  = ModelEvaluationConfig(
+            trained_model_path = Path('artifacts/training/model.h5'),
+            training_data_path = Path('artifacts/data_ingestion/Chicken-fecal-images'),
+            all_params = self.params,
+            params_image_size = self.params.IMAGE_SIZE,
+            params_batch_size = self.params.BATCH_SIZE, 
+        )
+        return evaluation_config
         
