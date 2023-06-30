@@ -5,7 +5,7 @@ stages:
       - src/components/data_ingestion.py
       - config/config.yaml
     outs:
-      - artifacts/data_ingestion/Chicken-fecal-images
+      - artifacts/data_ingestion
   
   prepare_base_model:
     cmd: python src/pipeline/stage_02_prepare_base_model.py
