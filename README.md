@@ -20,3 +20,18 @@ Type in the terminal:
 ```
     tensorboard --logdir artifacts/prepare_callbacks/tensorboard_log_dir 
 ```
+
+### Run Entire Workflow
+
+```
+    dvc init
+```
+
+```
+    dvc repro
+```
+
+### Prediction Pipeline
+```
+    python app.py
+```
