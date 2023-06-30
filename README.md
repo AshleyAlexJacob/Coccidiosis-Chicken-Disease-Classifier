@@ -35,3 +35,8 @@ Type in the terminal:
 ```
     python app.py
 ```
+
+#### Credits:
+Krish Naik Youtube Channel
+
+This project was made as part of tutorial series by Krish Naik.
